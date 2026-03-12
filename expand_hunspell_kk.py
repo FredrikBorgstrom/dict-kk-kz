@@ -176,7 +176,8 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     aff_path = os.path.join(script_dir, 'kk_KZ.aff')
     dic_path = os.path.join(script_dir, 'kk_KZ.dic')
-    output_path = os.path.join(script_dir, 'words_kk-KZ.txt')
+    os.makedirs(os.path.join(script_dir, 'output'), exist_ok=True)
+    output_path = os.path.join(script_dir, 'output', 'kazakh_kk_kz_cyrillic.txt')
 
     print("Parsing .aff file...", flush=True)
     sfx_rules, pfx_rules = parse_aff(aff_path)
